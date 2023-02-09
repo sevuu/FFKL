@@ -3,31 +3,27 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+
+# TODO obmyslec jakies minigierki
 
 
-# The game starts here.
+
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    $ player_name = ""
 
-    scene bg room
+    define w = Character(_("Wojtek"), color="#6097ff")
+    define p = Character('[player_name]', color ="#ebff00")
+    define j = Character(_("Jan"), color="#955be5")
+    define idk = Character ("???")
+    define ncz = Character ("Nauczyciel")
+    define f = Character ("Filip")
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
 
-    show eileen happy
 
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
+    $ chapter = 0
+    call ch0_main from _call_ch0_main
+    call ch1_main from _call_ch1_main
 
     return
